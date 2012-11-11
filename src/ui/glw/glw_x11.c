@@ -1330,7 +1330,8 @@ glw_x11_start(void)
   glw_reap(gr);
   glw_reap(gr);
 
-  setting_destroy(gx11->fullscreen_setting);
+  if (gx11->fullscreen_setting)
+    setting_destroy(gx11->fullscreen_setting);
   setting_destroy(gx11->settings_mouse_btn);
 
   prop_unsubscribe(evsub);
